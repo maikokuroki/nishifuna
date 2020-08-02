@@ -35,7 +35,7 @@ export const Play = [
         url:"https://www.park-funabashi.or.jp.e.akq.hp.transer.com/and/" ,
     },
     {
-        id 5,
+        id: 5,
         name:"Bowling Alley Strikers" ,
         description:"Only bowling alley in Nishi-Funabashi. Serving the area over 50 years." ,
         image:"/img/strikers.jpeg" ,

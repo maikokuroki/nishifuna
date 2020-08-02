@@ -35,7 +35,7 @@ export const Restaurant = [
         url:"https://asobi-nishifunabashi.owst.jp/" ,
     },
     {
-        id 5,
+        id: 5,
         name:"Nagi" ,
         description:"If you are looking for a place for good Japanese Sake, Nagi is where you need to go! They have tons of variety of Sake from all over Japan. Only a min away from Keisei-Nishifuna station." ,
         image:"/img/nagi.jpg" ,
