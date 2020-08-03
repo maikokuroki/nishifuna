@@ -1,55 +1,36 @@
 import React,{useState} from 'react';
+import { Route, Switch,} from 'react-router'
 import { 
         Card, 
-        CardBody,
-        Image, 
         Container, 
         Row, 
         Col, 
-        Button, 
-        CardImg, 
-        CardTitle, 
-        CardColumns, 
-        CardSubtitle, 
-        CardText, 
         Media, 
         Carousel,
         CarouselItem,
         CarouselControl,
         CarouselIndicators,
         CarouselCaption,
-        Jumbotron
+        Image
     } from 'reactstrap';
 
-import { Play } from '../shared/play';
-import { Restaurant } from '../shared/eat';
-import { render } from '@testing-library/react';
+import Eat from './EatComponent';
+import Drink from './DrinkComponent';  
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
+import Fun from './PlayComponent';    
+import Router from './RouterComponent';
+
 import { Images } from '../shared/images'
 
-const items = [
-    {
-      src: "/img/kakuyacoffee.jpg",
-      altText: 'Hip Coffee Shop',
-      caption: 'Kakuya Coffee Stand'
-    },
-    {
-      src: "/img/cannes.jpg",
-      altText: 'Cozy Italian Restaurant',
-      caption: 'Cannnes'
-    },
-    {
-      src: '/img/funabashibeer.jpeg',
-      altText: 'One and Only local brewery',
-      caption: 'Funabashi Brewery'
-    }
-  ];
+
 
 function MainBody(props) {
 
 const images = {Images};
     return (
         <React.Fragment>
-           
+   
             <Container>
                 <Row>
                     <Col>
@@ -59,8 +40,10 @@ const images = {Images};
                 </Row>
             </Container>
 
-            
-                <MainCarousel />
+            <Eat />
+            <Drink />
+            <Fun />
+          
                 
 
 
@@ -79,53 +62,6 @@ function MainCard(props){
     );
 }
 
-const MainCarousel = (props) => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [animating, setAnimating] = useState(false);
-  
-    const next = () => {
-      if (animating) return;
-      const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-      setActiveIndex(nextIndex);
-    }
-  
-    const previous = () => {
-      if (animating) return;
-      const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-      setActiveIndex(nextIndex);
-    }
-  
-    const goToIndex = (newIndex) => {
-      if (animating) return;
-      setActiveIndex(newIndex);
-    }
-  
-    const slides = items.map((item) => {
-      return (
-        <CarouselItem
-          onExiting={() => setAnimating(true)}
-          onExited={() => setAnimating(false)}
-          key={item.src}
-        >
-          <img className='align-item-center img-thumbnail mx-auto d-block' src={item.src} alt={item.altText} width="60%"/>
-          <CarouselCaption className="CarouselCaption" captionText={item.altText} captionHeader={item.caption} />
-        </CarouselItem>
-      );
-    });
-  
-    return (
-      <Carousel
-        activeIndex={activeIndex}
-        next={next}
-        previous={previous}
-      >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
-        {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
-      </Carousel>
-    );
-  }
-  
+
 
 export default MainBody;

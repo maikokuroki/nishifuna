@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import {Container, Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Collapse, CardBody, Card, Media} from 'reactstrap';
 
-import { Images } from '../shared/images';
 
 function Footer() {
     return (
@@ -10,14 +9,12 @@ function Footer() {
             <Container>
                 <Row>
                     <Col id="aboutus">
-                        <h2><i className="fa fa-angle-double-right small" /> ABOUT US <i className="fa fa-angle-double-left small" /></h2>
+                       
                     </Col>
                 </Row>
                 <Row>
                     
-                    <Col id="accordion">
-                        <AboutAuther />    
-                    </Col>
+                
                     <Col id="social">
                         <h4>Social
                             <a class="btn btn-social-icon btn-instagram btn-" href="http://instagram.com/"><i class="fa fa-instagram"></i></a>
@@ -43,7 +40,8 @@ function Footer() {
 function SubscribeModal(props){
     const {
         buttonLabel,
-        className
+        className,
+        email
       } = props;
     
       const [modal, setModal] = useState(false);
@@ -52,7 +50,8 @@ function SubscribeModal(props){
 
       function clickSubscription(){
           return(
-          alert("Thank you for your subscription!")
+          alert(`Thank you for your subscription!` 
+          )
           )
       }
 
@@ -80,28 +79,6 @@ function SubscribeModal(props){
       );
     }
     
-
-function AboutAuther(props){
-    const [isOpen, setIsOpen] = useState(false);
-      
-    const toggle = () => setIsOpen(!isOpen);
-
-    const image = {Images};
-      
-    return (
-          <div>
-            <Button color="info" onClick={toggle} style={{ marginBottom: '1rem' }}>About Auther</Button>
-            <Collapse isOpen={isOpen}>
-              <Card>
-                <CardBody>
-                <Media src={`${process.env.PUBLIC_URL}/img/maiko1.jpeg`} width="40%" />
-                Hi, my name is Maiko.
-                </CardBody>
-              </Card>
-            </Collapse>
-          </div>
-        );
-}
 
 
 export default Footer;

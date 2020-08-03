@@ -5,15 +5,15 @@ import {CardDeck, CardBody, Card, CardImg, CardTitle, CardText, Button, Modal, M
     CarouselIndicators,
     CarouselCaption, Link, CardFooter} from 'reactstrap';
 
-import { Play } from '../shared/play';
+import { Restaurant } from '../shared/eat';
 
 
-const items = Play;
+const items = Restaurant;
 
 
 //  Modal //
 
-const PlayModal = (props) => {
+const EatModal = (props) => {
     const {
       className
     } = props;
@@ -24,11 +24,11 @@ const PlayModal = (props) => {
 
     return (
       <div>
-        <Button color="info" onClick={toggle}>FUN</Button>
+        <Button color="info" onClick={toggle}>EAT</Button> 
         <Modal isOpen={modal} toggle={toggle} className={className}>
-          <ModalHeader toggle={toggle}>Place to play</ModalHeader>
+          <ModalHeader toggle={toggle}>Restaurants</ModalHeader>
           <ModalBody>
-            <DrinkCarousel />
+            <EatCarousel />
           </ModalBody>
          
         </Modal>
@@ -36,7 +36,7 @@ const PlayModal = (props) => {
     );
   }
   
-  const DrinkCarousel = (props) => {
+  const EatCarousel = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
   
@@ -93,16 +93,16 @@ const PlayModal = (props) => {
     );
   }
 
-function Fun(){
+function Eat(){
     
     
         return (
             <div>
-                <PlayModal />
+                <EatModal />
             </div>
             
             
         );
 }
 
-export default Fun;
+export default Eat;

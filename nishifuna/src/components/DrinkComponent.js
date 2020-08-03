@@ -5,15 +5,15 @@ import {CardDeck, CardBody, Card, CardImg, CardTitle, CardText, Button, Modal, M
     CarouselIndicators,
     CarouselCaption, Link, CardFooter} from 'reactstrap';
 
-import { Play } from '../shared/play';
+import { CafeAndBar } from '../shared/drink';
 
 
-const items = Play;
+const items = CafeAndBar;
 
 
 //  Modal //
 
-const PlayModal = (props) => {
+const DrinkModal = (props) => {
     const {
       className
     } = props;
@@ -24,9 +24,9 @@ const PlayModal = (props) => {
 
     return (
       <div>
-        <Button color="info" onClick={toggle}>FUN</Button>
+        <Button color="info" onClick={toggle}>DRINK</Button>
         <Modal isOpen={modal} toggle={toggle} className={className}>
-          <ModalHeader toggle={toggle}>Place to play</ModalHeader>
+          <ModalHeader toggle={toggle}>Cafe and Bar</ModalHeader>
           <ModalBody>
             <DrinkCarousel />
           </ModalBody>
@@ -93,16 +93,16 @@ const PlayModal = (props) => {
     );
   }
 
-function Fun(){
+function Drink(){
     
     
         return (
             <div>
-                <PlayModal />
+                <DrinkModal />
             </div>
             
             
         );
 }
 
-export default Fun;
+export default Drink;
