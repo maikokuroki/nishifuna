@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Container, Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Collapse, CardBody, Card, Media} from 'reactstrap';
+import {Container, Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input} from 'reactstrap';
 
 
 function Footer() {
@@ -7,11 +7,7 @@ function Footer() {
         <React.Fragment>
             
             <Container>
-                <Row>
-                    <Col id="aboutus">
-                       
-                    </Col>
-                </Row>
+                
                 <Row>
                     
                 
@@ -38,11 +34,6 @@ function Footer() {
 }
 
 function SubscribeModal(props){
-    const {
-        buttonLabel,
-        className,
-        email
-      } = props;
     
       const [modal, setModal] = useState(false);
     
@@ -60,7 +51,7 @@ function SubscribeModal(props){
       return (
         <div>
           <Button color="info" onClick={toggle}>Subscribe</Button>
-          <Modal isOpen={modal} toggle={toggle} className={className}>
+          <Modal isOpen={modal} toggle={toggle}>
             <ModalHeader toggle={toggle}><i className="fa fa-envelope" /> Join our montly news letter.</ModalHeader>
             <ModalBody>
                 <Form>

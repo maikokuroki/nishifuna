@@ -1,17 +1,47 @@
-import React from 'react'
-import { Card, CardBody, Media } from 'reactstrap';
-import { Images } from '../shared/images';
+import React, { useState } from 'react';
+import {CardBody, Card, CardImg, CardTitle, CardText, Button, Modal, ModalHeader, ModalBody,CardFooter} from 'reactstrap';
+
+
+
+//  Modal //
+
+const AboutModal = (props) => {
+    
+    const [modal, setModal] = useState(false);
+  
+    const toggle = () => setModal(!modal);
+
+    return (
+      <div>
+        <Button color="info" onClick={toggle}>ABOUT</Button>
+        <Modal isOpen={modal} toggle={toggle} >
+          <ModalHeader toggle={toggle}>About an author</ModalHeader>
+          <ModalBody>
+            <Card>
+                <CardImg width="50%" src={`${process.env.PUBLIC_URL}/img/maiko1.jpeg`} alt="Maiko's picture" />
+                <CardBody>
+                <CardTitle className='CardTitle fluid'>About an author</CardTitle>
+                <CardText>Hi, My name is Maiko</CardText>
+                </CardBody>
+                <CardFooter>
+                
+                </CardFooter>
+            </Card>
+          </ModalBody>
+         
+        </Modal>
+      </div>
+    );
+  }
+  
+
+
+
 
 function About() {
     return (
         <div>
-             <h2><i className="fa fa-angle-double-right small" /> ABOUT US <i className="fa fa-angle-double-left small" /></h2>
-            <Card>
-                <CardBody>
-                <Media src={`${process.env.PUBLIC_URL}/img/maiko1.jpeg`} width="40%" />
-                Hi, my name is Maiko.
-                </CardBody>
-              </Card>
+            <AboutModal />
         </div>
     )
 }

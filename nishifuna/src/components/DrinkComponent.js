@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import {CardDeck, CardBody, Card, CardImg, CardTitle, CardText, Button, Modal, ModalHeader, ModalBody, ModalFooter, Carousel,
+import {CardBody, Card, CardImg, CardTitle, CardText, Button, Modal, ModalHeader, ModalBody,Carousel,
     CarouselItem,
     CarouselControl,
     CarouselIndicators,
-    CarouselCaption, Link, CardFooter} from 'reactstrap';
+    CardFooter} from 'reactstrap';
 
 import { CafeAndBar } from '../shared/drink';
 
