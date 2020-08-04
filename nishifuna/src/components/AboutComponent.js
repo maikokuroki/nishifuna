@@ -13,15 +13,18 @@ const AboutModal = (props) => {
 
     return (
       <div>
-        <Button color="info" onClick={toggle}>ABOUT</Button>
+        <Button outline color="info" onClick={toggle}>ABOUT</Button>
         <Modal isOpen={modal} toggle={toggle} >
           <ModalHeader toggle={toggle}>About an author</ModalHeader>
           <ModalBody>
             <Card>
                 <CardImg width="50%" src={`${process.env.PUBLIC_URL}/img/maiko1.jpeg`} alt="Maiko's picture" />
                 <CardBody>
-                <CardTitle className='CardTitle fluid'>About an author</CardTitle>
-                <CardText>Hi, My name is Maiko</CardText>
+                
+                <CardText>Hi, My name is Maiko.<br />
+                  I am currently taking Full stack coding boot camp. This is my React project and I want to show you my hometown in Japan.<br />
+                   I hope you enjoy it. Thank you for visiting!
+                </CardText>
                 </CardBody>
                 <CardFooter>
                 

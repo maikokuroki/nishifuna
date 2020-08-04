@@ -24,7 +24,7 @@ const DrinkModal = (props) => {
 
     return (
       <div>
-        <Button color="info" onClick={toggle}>DRINK</Button>
+        <Button outline color="info" onClick={toggle}>DRINK</Button>
         <Modal isOpen={modal} toggle={toggle} className={className}>
           <ModalHeader toggle={toggle}>Cafe and Bar</ModalHeader>
           <ModalBody>
@@ -69,7 +69,7 @@ const DrinkModal = (props) => {
             <CardBody>
             <CardTitle className='CardTitle fluid'>{item.name}</CardTitle>
             <CardText>{item.description}</CardText>
-            <Button href={item.url} block>More Info</Button>
+            <Button href={item.url} target="_blank" block>More Info</Button>
             </CardBody>
             <CardFooter>
             

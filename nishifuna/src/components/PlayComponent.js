@@ -24,7 +24,7 @@ const PlayModal = (props) => {
 
     return (
       <div>
-        <Button color="info" onClick={toggle}>FUN</Button>
+        <Button outline color="info" onClick={toggle}>FUN</Button>
         <Modal isOpen={modal} toggle={toggle} className={className}>
           <ModalHeader toggle={toggle}>Place to play</ModalHeader>
           <ModalBody>
@@ -69,7 +69,7 @@ const PlayModal = (props) => {
             <CardBody>
             <CardTitle className='CardTitle fluid'>{item.name}</CardTitle>
             <CardText>{item.description}</CardText>
-            <Button href={item.url} block>More Info</Button>
+            <Button href={item.url} target="_blank" block>More Info</Button>
             </CardBody>
             <CardFooter>
             

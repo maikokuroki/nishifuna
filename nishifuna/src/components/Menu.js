@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 
 import Eat from './EatComponent';
 import Drink from './DrinkComponent';
@@ -10,10 +10,10 @@ function Menu() {
     return (
         <div>
             <Row>
-                    <Eat />{' '}
-                    <Drink />{' '}
-                    <Fun />{' '}
-                    <About />
+                <Col><Eat /></Col>
+                <Col><Drink /></Col>
+                <Col><Fun /></Col>
+                <Col><About /></Col>
             </Row>
             
         </div>
